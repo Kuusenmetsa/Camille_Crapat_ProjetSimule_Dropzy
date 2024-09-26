@@ -1,0 +1,14 @@
+.dropdown__open__options__option {
+	height: 30px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	padding-left: 3px;
+}
+.dropdown__open__options__option:hover {
+	cursor: pointer;
+}
+
+.dropdown__open__options__option:focus {
+	background-color: #91ad17;
+}
