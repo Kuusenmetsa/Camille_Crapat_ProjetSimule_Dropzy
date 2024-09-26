@@ -1,44 +1,44 @@
 # Dropzy
 
-Dropzy est une librairie permettant d'ajouter à un projet ReactJS une liste déroulante personnalisable.
+Dropzy is a customizable drop-down list for your ReactJS project.
 
-## Spécification
+## Specification
 
-- Champs de recherche : _Permet d'effectuer une recherche dans les différentes valeurs_
-- Animation : _Animation à l'ouverture et à la fermeture de la liste déroulante_
-- Responsive : _S'adapte à toutes les tailles d'écrans_
-- Personalisable : _Possibilité de modifier plusieurs options_
-- Clavier : _Navigable au clavier_
+- <ins>Search box :</ins> _You can use the search box to filter dropdown list items_
+- <ins>Animation :</ins> _Animation of drop-down list on opening and closing_
+- <ins>Responsive :</ins> _Adapts to all screens size_
+- <ins>Customizable :</ins> _Ability to modify several options_
+- <ins>Accessibility :</ins> _Navigable with keyboard_
 
 ## Installation
 
-1. Pour installer Dropzy :
+1. You can install the Dropzy library with npm :
 
 ```
 npm install dropzy
 ```
 
-2. Importation de Dropzy :
+2. Import Dropzy on your ReactJS project :
 
 ```JavaScript
-import Dropzy from 'dropzy';
+import { Dropzy } from 'dropzy';
 ```
 
-3. Utilisation de Dropzy dans votre projet ReactJS
+3. Use the Dropzy component in your React project :
 
 ```JavaScript
 import { useState } from 'react';
 
-import Dropzy from './components/Dropzy';
+import { Dropzy } from 'dropzy';
 
 export default function App() {
-	const [value, setValue] = useState(''); // Permettant d'initialiser la valeur et de récupérer la selection de l'utilisateur
+	const [value, setValue] = useState('');
     const options = [
         "value 1",
         "value 2"
     ];
 	return (
-		<div className='form'>
+		<div>
 			<Dropzy
 				value={value}
 				setValue={setValue}
@@ -49,19 +49,19 @@ export default function App() {
 }
 ```
 
-## Options disponibles
+## Options
 
-| Option        | Type de donnée        | default   | Example                            | required                                                       | Description                                                           |
-| ------------- | --------------------- | --------- | ---------------------------------- | -------------------------------------------------------------- | --------------------------------------------------------------------- |
-| value         | string                | ''        | `value={''}`                       | OUI                                                            | Variable contenant la valeur selectionné par l'utilisateur            |
-| setValue      | func                  |           | `setValue={setValue}`              | OUI                                                            | Fonction useState permettant de mettre la jour la valeur              |
-| options       | array                 | []        | `options={['value 1", "value 2"]}` | OUI                                                            | Tableau des options                                                   |
-| animate       | booléan (true\|false) | true      | `searchInput={false}`              | NON Suppression de l'animation à l'ouverture et à la fermeture |
-| searchInput   | booléan (true\|false) | true      | `searchInput={false}`              | NON                                                            | Mise en place d'un champs de recherche au sein de la liste déroulante |
-| color         | string                | '#0486c2' | `color={'#FFFFFF'}`                | NON                                                            | Fond des valeurs au survol de la souris                               |
-| selectHeight  | string                | '30px'    | `selectHeight={'100vh'}`           | NON                                                            | Changement de la taille du select                                     |
-| optionsHeight | string                | '150px'   | `optionsHeight={'100vh'}`          | NON                                                            | Changement de la taille du select ouvert                              |
+| Option        | Data type               | Default   | Example                            | Required | Description                                          |
+| ------------- | ----------------------- | --------- | ---------------------------------- | -------- | ---------------------------------------------------- |
+| value         | string                  | ''        | `value={value}`                    | YES      | Value of useState with value select by user          |
+| setValue      | function                |           | `setValue={setValue}`              | YES      | Function useState for change value                   |
+| options       | array                   | []        | `options={['value 1", "value 2"]}` | YES      | Options array                                        |
+| animate       | booléan (true \| false) | true      | `searchInput={false}`              | NO       | Remove animation when opening and closing dropdown   |
+| searchInput   | booléan (true \| false) | true      | `searchInput={false}`              | NO       | removing search box to filter dropdown list items    |
+| color         | string                  | '#0486c2' | `color={'#FFFFFF'}`                | NO       | Change Background color of the option at hover mouse |
+| selectHeight  | string                  | '30px'    | `selectHeight={'100vh'}`           | NO       | Change drop-down list height size                    |
+| optionsHeight | string                  | '150px'   | `optionsHeight={'100vh'}`          | NO       | Change box height size                               |
 
-## Développeur
+## Developer
 
-Liste déroulante créée par Camille CRAPAT - Kuusenmetsa
+Drop-down list create by Kuusenmetsa - Camille Crapat
