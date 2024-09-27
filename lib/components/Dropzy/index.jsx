@@ -28,17 +28,18 @@ export default function Dropzy(props) {
 	};
 
 	return (
-		<div
-			className='dropdown'
-			tabIndex={0}
-			onClick={() => setOpen(!open)}
-			onKeyDown={(e) => {
-				if (e.keyCode === 13) {
-					setOpen(!open);
-				}
-			}}
-		>
-			<div className='dropdown__select' style={{ height: selectHeight }}>
+		<div className='dropdown'>
+			<div
+				className='dropdown__select'
+				style={{ height: selectHeight }}
+				onClick={() => setOpen(!open)}
+				tabIndex={0}
+				onKeyDown={(e) => {
+					if (e.keyCode === 13) {
+						setOpen(!open);
+					}
+				}}
+			>
 				<div className='dropdown__select__value'>{value === '' ? `--Please choose an option--` : value}</div>
 				<img
 					src={ChevronDownSolid}
@@ -66,6 +67,7 @@ export default function Dropzy(props) {
 								value={search}
 								onChange={(e) => setSearch(e.target.value)}
 								tabIndex={0}
+								autoFocus
 							/>
 							<div className='dropdown__open__search--reset'>
 								<img

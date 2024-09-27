@@ -1,7 +1,7 @@
 {
 	"name": "dropzy",
 	"private": false,
-	"version": "1.1.0",
+	"version": "1.2.0",
 	"description": "Dropzy is a library allowing you to add a customizable drop-down list to a ReactJS project.",
 	"keywords": [
 		"dropdown",
