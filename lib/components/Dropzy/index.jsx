@@ -108,5 +108,4 @@ Dropzy.propTypes = {
 	color: PropTypes.string,
 	selectHeight: PropTypes.string,
 	optionsHeight: PropTypes.string,
-	tab: PropTypes.number,
 };
