@@ -28,18 +28,17 @@ export default function Dropzy(props) {
 	};
 
 	return (
-		<div className='dropdown'>
-			<div
-				className='dropdown__select'
-				onClick={() => setOpen(!open)}
-				onKeyDown={(e) => {
-					if (e.keyCode === 13) {
-						setOpen(!open);
-					}
-				}}
-				tabIndex={1}
-				style={{ height: selectHeight }}
-			>
+		<div
+			className='dropdown'
+			tabIndex={0}
+			onClick={() => setOpen(!open)}
+			onKeyDown={(e) => {
+				if (e.keyCode === 13) {
+					setOpen(!open);
+				}
+			}}
+		>
+			<div className='dropdown__select' style={{ height: selectHeight }}>
 				<div className='dropdown__select__value'>{value === '' ? `--Please choose an option--` : value}</div>
 				<img
 					src={ChevronDownSolid}
@@ -66,7 +65,7 @@ export default function Dropzy(props) {
 								className='dropdown__open__search--input'
 								value={search}
 								onChange={(e) => setSearch(e.target.value)}
-								tabIndex={2}
+								tabIndex={0}
 							/>
 							<div className='dropdown__open__search--reset'>
 								<img
@@ -78,7 +77,7 @@ export default function Dropzy(props) {
 											resetSearchInput();
 										}
 									}}
-									tabIndex={3}
+									tabIndex={0}
 								/>
 							</div>
 						</div>
@@ -89,16 +88,9 @@ export default function Dropzy(props) {
 						}`}
 					>
 						{options.map(
-							(option, index) =>
+							(option) =>
 								option.toLowerCase().includes(search.toLowerCase()) && (
-									<Option
-										key={option}
-										option={option}
-										setValue={setValue}
-										setOpen={setOpen}
-										index={index}
-										color={color}
-									></Option>
+									<Option key={option} option={option} setValue={setValue} setOpen={setOpen} color={color}></Option>
 								)
 						)}
 					</ul>
@@ -116,4 +108,5 @@ Dropzy.propTypes = {
 	color: PropTypes.string,
 	selectHeight: PropTypes.string,
 	optionsHeight: PropTypes.string,
+	tab: PropTypes.number,
 };

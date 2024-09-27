@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import './index.css';
 
 export default function Option(props) {
-	const { option, setValue, setOpen, index, color } = props;
+	const { option, setValue, setOpen, color } = props;
 
 	const [mouse, setMouse] = useState(false);
 
@@ -24,7 +24,7 @@ export default function Option(props) {
 	return (
 		<li
 			className='dropdown__open__options__option'
-			tabIndex={3 + index}
+			tabIndex={0}
 			onMouseEnter={handleMouseEnter}
 			onMouseLeave={handleMouseLeave}
 			style={mouseStyle}
@@ -48,6 +48,5 @@ Option.propTypes = {
 	option: PropTypes.string,
 	setValue: PropTypes.func,
 	setOpen: PropTypes.func,
-	index: PropTypes.number,
 	color: PropTypes.string,
 };
